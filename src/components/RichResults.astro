@@ -1,0 +1,88 @@
+---
+// import { BOXERS } from "@/consts/boxers"
+
+/** https://developers.google.com/search/docs/appearance/structured-data/organization */
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  url: 'https://nutribym.com',
+  image: 'https://cdn.lavelada.dev/og.jpg', // pendiente de cambiar por el logo de Nutribym
+  sameAs: [
+    'https://www.instagram.com/nutribym',
+    'https://facebook.com/nutribym',
+    'https://github.com/v1cma-v/Nutribym',
+  ],
+  logo: 'https://cdn.lavelada.dev/og.jpg', // pendiente de cambiar por el logo de Nutribym
+  name: 'Nutribym',
+  alternateName: 'nutribym',
+  description:
+    'Web oficial de Nutribym, marca de nutricion deportiva y clinica ubicada en la ciudad de Puebla de Zaragoza, Puebla, México',
+}
+
+const FAQs = [
+  {
+    question: '¿Qué es Nutribym?',
+    answer:
+      'Nutribym es una empresa dedicada a mejorar la salud y el bienestar de nuestros clientes a través de planes nutricionales personalizados y basados en evidencia científica.',
+  },
+  {
+    question: '¿Qué servicios ofrece Nutribym?',
+    answer:
+      'Ofrecemos una variedad de servicios, incluyendo Nutrición Clínica, Nutrición Deportiva, Control de Peso y Nutrición Infantil. Todos nuestros planes son personalizados para satisfacer las necesidades individuales de cada cliente.',
+  },
+  {
+    question: '¿Cómo puedo agendar una cita con un nutriólogo de Nutribym?',
+    answer:
+      'Puedes agendar una cita a través de nuestro formulario de contacto en la página web o llamándonos directamente al 221 662 0552.',
+  },
+  {
+    question:
+      '¿Ofrecen planes para personas con condiciones de salud específicas?',
+    answer:
+      'Sí, nuestros planes de Nutrición Clínica están diseñados para ayudar a manejar y mejorar condiciones de salud específicas como diabetes, hipertensión y colesterol alto.',
+  },
+  {
+    question: '¿Pueden ayudarme a mejorar mi rendimiento deportivo?',
+    answer:
+      'Sí, nuestros planes de Nutrición Deportiva están diseñados para optimizar tu rendimiento y recuperación, ayudándote a alcanzar tus metas deportivas.',
+  },
+  {
+    question: '¿Tienen programas de nutrición para niños?',
+    answer:
+      'Sí, ofrecemos planes de Nutrición Infantil que aseguran un crecimiento y desarrollo saludable para tus hijos.',
+  },
+  {
+    question:
+      '¿Cómo puedo obtener más información sobre los servicios de Nutribym?',
+    answer:
+      'Puedes obtener más información sobre nuestros servicios visitando la página de servicios en nuestro sitio web o contactándonos directamente.',
+  },
+  {
+    question: '¿Ofrecen consultas en línea?',
+    answer:
+      'Sí, ofrecemos consultas en línea para que puedas recibir asesoramiento nutricional desde la comodidad de tu hogar.',
+  },
+]
+
+/** https://developers.google.com/search/docs/appearance/structured-data/faqpage */
+const FAQSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    FAQs.map(({ answer, question }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  ],
+}
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(organizationSchema)}
+/>
+<script type="application/ld+json" set:html={JSON.stringify(FAQSchema)} />

@@ -1,0 +1,78 @@
+---
+// import jost from "@fontsource-variable/jost/files/jost-latin-wght-normal.woff2"
+
+// PENDIENTE DE REVISAR
+
+import RichResults from '@/components/RichResults.astro'
+import type { Preload } from '@/types/Preload'
+
+interface Props {
+  title: string
+  description: string
+  preload?: Array<Preload>
+  canonical?: string
+  image?: string
+}
+
+const {
+  title,
+  description,
+  preload,
+  canonical,
+  image = 'https://cdn.lavelada.dev/og.jpg', //Pendiente de cambiar la imagen por la de la web
+} = Astro.props as Props
+
+const determineCanonicalURL = () => {
+  if (Astro.url.host.includes('localhost')) return 'http://localhost:4321'
+  return canonical || Astro.url.pathname
+}
+
+const canonicalURL = new URL(determineCanonicalURL(), Astro.site)
+---
+
+<title>{title}</title>
+
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+
+<!-- <link
+  rel="preload"
+  href={'https://cdn.lavelada.dev/fonts/font-atomic.woff2'}
+  as="font"
+  type="font/woff2"
+  crossorigin
+/> -->
+<!-- <link rel="preload" href={jost} as="font" type="font/woff2" crossorigin /> -->
+
+{
+  preload?.map(({ href, as, type, rel = 'preload', crossorigin }) => (
+    <link {rel} {href} {as} {type} {crossorigin} />
+  ))
+}
+
+<link rel="canonical" href={canonicalURL} />
+<meta name="viewport" content="width=device-width" />
+<!-- <meta name="theme-color" content="#d5ff00" /> -->
+
+<meta
+  name="keywords"
+  content="Nutricion, deporte, salud, bienestar, entretenimiento, Puebla"
+/>
+
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content="Nutribym" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="mx_MX" />
+
+<!-- <meta name="robots" content="index, follow" /> -->
+<!-- <meta name="googlebot" content="index, follow" /> -->
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="msapplication-config" content="/browserconfig.xml" />
+
+<!-- <script is:inline src="/registerSW.js"></script>
+<link rel="manifest" href="/manifest.webmanifest" /> -->
+<RichResults />
