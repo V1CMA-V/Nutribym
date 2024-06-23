@@ -1,0 +1,22 @@
+---
+const especialidad = [
+  'Diabetes',
+  'Hipertensión',
+  'Obesidad',
+  'Ristencia a la insulina',
+  'Lesiones Deportivas',
+  'Alergias Alimentarias',
+  'Vegetarianos',
+  'Veganos',
+]
+---
+
+<ul class="grid grid-cols-2 mt-5  px-3 w-full ">
+  {
+    especialidad.map((item) => (
+      <li class="text-lg text-pretty">
+        <strong>✔</strong> {item}
+      </li>
+    ))
+  }
+</ul>

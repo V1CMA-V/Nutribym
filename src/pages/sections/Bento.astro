@@ -1,0 +1,126 @@
+---
+import BentoItem from '@/components/BentoItem.astro'
+---
+
+<section class="mx-auto p-6 md:p-12 lg:p-20 text-white">
+  <h3 class="text-4xl font-semibold mx-auto tracking-wide text-center mb-10">
+    ¿Qué incluye tu consulta?
+  </h3>
+  <section
+    class={`
+      grid lg:grid-cols-10 auto-rows-[30rem] gap-4
+    `}
+  >
+    <BentoItem class="col-span-10 lg:col-span-4" title="VALORACION CORPORAL">
+      <div
+        slot="image"
+        class="background transition-scale absolute bottom-0 left-0 top-0
+          -z-10 h-full w-full
+          bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+        style="background-image: url('/img/medida.jpg')"
+      >
+      </div>
+
+      <p slot="content" class="max-w-xl text-base md:text-lg">
+        Historia clínica, <strong>toma de plicometria</strong> y circunferencias,
+        <strong>interpretación de composición corporal</strong> por bascula de impedancia.
+      </p>
+    </BentoItem>
+    <BentoItem
+      class="col-span-10 lg:col-span-6"
+      title="MONITOREO NUTRICIONAL"
+      subtitle="Personalización continua para tus necesidades"
+    >
+      <div
+        slot="image"
+        class="background transition-scale absolute bottom-0 left-0 top-0
+      -z-10 h-full w-full
+      bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+        style="background-image: url('/img/consulta.webp')"
+      >
+      </div>
+      <p slot="content" class="max-w-xl text-base md:text-lg">
+        <strong>Seguimiento</strong> y <strong
+          >control del plan nutricional</strong
+        > ¿necesitas algunos ajustes al plan? ¡no hay problema! Damos <strong
+          >un seguimiento personalizado</strong
+        >.
+      </p>
+    </BentoItem>
+    <BentoItem
+      class="col-span-10 lg:col-span-6"
+      title="PLAN NUTRICIONAL PERSONALIZADO"
+      subtitle="Tu plan a medida en tiempo récord"
+    >
+      <div
+        slot="image"
+        class="background transition-scale absolute bottom-0 left-0 top-0
+          -z-10 h-full w-full
+          bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+        style="background-image: url('/img/plan_nutricional.webp')"
+      >
+      </div>
+      <p slot="content" class="max-w-xl text-base md:text-lg">
+        De acuerdo a objetivos/enfermedades <strong
+          >con 2 opciones diferentes</strong
+        > por tiempo de comida (duración de 1 mes) Se <strong
+          >entrega dentro de las primeras 48 hrs</strong
+        > después de la consulta
+      </p>
+    </BentoItem>
+    <BentoItem
+      class="col-span-10 lg:col-span-4"
+      title="APLICACION DE SEGUIMIENTO"
+    >
+      <div
+        slot="image"
+        class="background transition-scale absolute bottom-0 left-0 top-0
+          -z-10 h-full w-full bg-black/50
+          bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+        style="background-image: url('/img/app_nuticional.jpg')"
+      >
+      </div>
+      <p slot="content" class="max-w-xl text-base md:text-lg">
+        Se te da una cuenta para que ingreses a <strong>nuestra app</strong> en la
+        cual <strong>podras ver tus avances como tus medidas</strong>, ademas de
+        compartir tus avances.
+      </p>
+    </BentoItem>
+  </section>
+</section>
+
+<!-- 
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const backgrounds = document.querySelectorAll(
+      '.background'
+    ) as NodeListOf<HTMLElement>
+
+    if (window.IntersectionObserver == null) {
+      backgrounds.forEach((bkg) => {
+        bkg.style.backgroundImage = "url('" + bkg.dataset.src + "')"
+      })
+      return
+    }
+
+    function handleIntersection(entries: IntersectionObserverEntry[]) {
+      entries.map((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement
+          const { style, dataset } = target
+          // Item has crossed our observation
+          // threshold - load src from data-src
+          style.backgroundImage = "url('" + dataset.src + "')"
+          // Job done for this item - no need to watch it!
+          observer.unobserve(entry.target)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      rootMargin: '100px',
+    })
+
+    backgrounds.forEach((bkg) => observer.observe(bkg))
+  })
+</script> -->
