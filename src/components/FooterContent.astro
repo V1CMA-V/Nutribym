@@ -7,20 +7,11 @@ import Typography from '@/components/Typography.astro'
     as="span"
     variant="body"
     color="neutral"
-    class:list={'text-center'}
+    class:list={'text-center '}
   >
-    &copy; {new Date().getFullYear()} Nutribym <span
+    &copy; {new Date().getFullYear()} <span class="font-fugazOne"> Nutribym</span> <span
       aria-hidden="true"
       class="hidden md:inline">|</span
     ><br aria-hidden="true" class="block md:hidden" /> Todos los derechos reservados.
-  </Typography>
-  <Typography
-    as="a"
-    variant="body"
-    color="neutral"
-    class:list="underline hidden"
-    href="/legal-advice"
-  >
-    Aviso legal
   </Typography>
 </div>

@@ -3,7 +3,7 @@ import { ViewTransitions } from 'astro:transitions'
 
 // Supports weights 200-900
 import '@fontsource-variable/nunito'
-import '@fontsource/fugaz-one';
+import '@fontsource/fugaz-one'
 
 import Header from '@/components/Header.astro'
 import LightsBackground from '@/components/LightsBackground.astro'
@@ -71,6 +71,8 @@ const { title, description, preload, canonical, image } = Astro.props
         --color-accent-rgb: 241, 181, 147;
 
         --background-color: #1e1f20; /* #faf6f0*/
+
+        color-scheme: dark;
       }
 
       /* @font-face {
@@ -95,6 +97,19 @@ const { title, description, preload, canonical, image } = Astro.props
         &:has(dialog[open]) {
           overflow: hidden;
         }
+      }
+      p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.4;
+        margin-bottom: 1em;
+        font-weight: 100;
+        font-size: 1em;
+        letter-spacing: 0.5px;
+      }
+
+      p strong {
+        color: white;
+        font-weight: 700;
       }
 
       /* Hiding class, making content visible only to screen readers but not visually */

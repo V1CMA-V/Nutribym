@@ -1,10 +1,213 @@
 ---
+import HeroContainer from '@/components/HeroContainer.astro'
 import Layout from '@/layouts/Layout.astro'
+import ButtonToServices from '@/components/ButtonToServices.astro'
+
+const logros = [
+  'Premio a la Excelencia en Nutrición 2020, Certificación en Nutrición Deportiva Avanzada.',
+  '“Seminario sobre nutrición aplicada al triatlón» G.SE, American College of Sport Medicine, Francis Holway, febrero de 2021.',
+  '“Curso avanzado de NOM-051 Etiquetado de advertencia» Unicef, Instituto Nacional de Salud Pública, Noviembre de 2020',
+  'Nuevos enfoques para medir la Ingesta alimentaria en deportistas- Dra Deborah Kerr”, IICDEM, noviembre 2020, online.',
+  '“14 Congreso Internacional: Hipertrofia Muscular” Fivestarts International Graduated School, septiembre 2020, online.',
+  '“Periodización en la alimentación en el culturismo natural” Natural Powerbuilding, septiembre 2020, online.',
+  '“Ciencia Teórica y Práctica en el Entrenamiento Funcional” INDEN, agosto 2020, modalidad online.',
+]
 ---
 
 <Layout
-  description={'Todos los combates de La Velada del Año IV'}
-  title={'Combates - La Velada del Año IV'}
+  title="Sobre nosotros"
+  description="Pagina para saber nuestra trayectoria en adiestramiento canino"
 >
-  
+  <HeroContainer img="plan_nutricional.webp">
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase tracking tracking-widest text-black"
+    >
+      Sobre nosotros
+    </h1>
+  </HeroContainer>
+
+  <!-- <main class="pb-24"> -->
+  <main class="mx-auto max-w-7xl md:pt-20 lg:px-10 text-white">
+    <section
+      class="mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="theater-text" class="md:w-1/2 space-y-4">
+        <h1
+          class="mx-auto mb-10 text-balance text-left text-3xl lg:text-5xl font-semibold tracking-wide"
+        >
+          Quienes somos y que hacemos
+        </h1>
+        <p class="text-balance text-2xl font-light">
+          En <strong>Nutribym</strong>, estamos dedicados a <strong
+            >mejorar la salud y el bienestar</strong
+          > de nuestros clientes a través de <strong
+            >planes nutricionales personalizados</strong
+          >
+          y <strong>basados en evidencia científica</strong>. Nuestra misión es
+          acompañarte en cada paso hacia un estilo de vida más saludable y
+          equilibrado.
+        </p>
+      </div>
+      <div id="theater" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={500}
+          src="/img/brym.jfif"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={500}
+        />
+      </div>
+    </section>
+    <h1
+      class="mx-auto mb-10 text-balance text-3xl lg:text-5xl font-semibold tracking-wide text-center"
+    >
+      Nuestro Equipo
+    </h1>
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="trophies" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={556}
+          src="/img/mon.jpg"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={812}
+        />
+      </div>
+      <div id="trophies-text" class="md:w-1/2 space-y-4">
+        <h2
+          class="mx-auto mb-10 text-balance text-left text-2l lg:text-4xl font-semibold tracking-wide"
+        >
+          MNC. Mónica Martínez
+        </h2>
+        <p class="text-balance md:text-2xl">
+          Lic. Nutrición clínica. BUAP Maestria Nutrición Clínica. UVM Nutrición
+          para atletas y personas activas "Con más de 10 años de experiencia, la
+          Dra. Martínez se especializa en ayudar a los atletas a alcanzar su
+          máximo rendimiento a través de la nutrición."
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="w-full max-w-[1400px] mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col md:flex-row items-center justify-between p-6 md:p-8"
+    >
+      <div id="theater-text" class="md:w-1/2 space-y-4">
+        <h2
+          class="mx-auto mb-10 text-balance text-left text-2l lg:text-4xl
+        font-semibold tracking-wide"
+        >
+          LNC. Bryam Camacho
+        </h2>
+        <p class="text-balance text-2xl">
+          Lic. Nutrición clínica. BUAP Maestria Nutrición Clínica. UVM Nutrición
+          para atletas y personas activas "Con más de 10 años de experiencia, la
+          Dra. Martínez se especializa en ayudar a los atletas a alcanzar su
+          máximo rendimiento a través de la nutrición."
+        </p>
+      </div>
+      <div id="theater" class="mt-6 md:mt-0 md:w-1/2">
+        <img
+          class="object-cover w-full h-full rounded-md"
+          height={500}
+          src="/img/brym.jfif"
+          style={{
+            aspectRatio: '812/556',
+            objectFit: 'cover',
+          }}
+          width={500}
+        />
+      </div>
+    </section>
+
+    <section
+      class="mx-auto my-24 gap-10 text-pretty px-6 text-left text-xl sm:px-20 flex flex-col items-center justify-between p-6 md:p-8"
+    >
+      <h2 class="text-4xl font-bold">Logros y Reconocimientos</h2>
+
+      <ul class="flex flex-col gap-4">
+        {logros.map((logro, index) => <li>👉 {logro}</li>)}
+      </ul>
+    </section>
+  </main>
+
+  <div class="bg-no-repeat bg-cover relative h-[90vh] w-full max-w-[100vw]">
+    <div
+      class="absolute inset-0 ml-96 w-full flex justify-center flex-col items-center animate-blurred-fade-in "
+    >
+      <p class="text-black text-center text-2xl font-semibold w-1/3 text-pretty">
+        ¿Quieres saber más sobre nuestro equipo y cómo podemos ayudarte a
+        alcanzar tus metas de salud?
+      </p>
+      <ButtonToServices
+        href="https://wa.me/2216620552?text=Hola,%20estoy%20interesado(a)%20en%20los%20servicios%20de%20adiestramiento%20de%20perros%20y%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20proporcionarme%20detalles%20sobre%20los%20programas%20disponibles,%20precios%20y%20disponibilidad?%20Gracias"
+        >Contactanos</ButtonToServices
+      >
+    </div>
+    <img
+      class="absolute h-full w-full object-cover object-center animate-duration-1000 animate-fade-in -z-10"
+      src="/img/accion.webp"
+      alt="Minis FHA cover"
+    />
+  </div>
+
+  <style>
+    #theater,
+    #trophies-text h1,
+    #trophies-text p {
+      animation: cover-animation linear both;
+      animation-timeline: view();
+    }
+    #theater-text h1,
+    #theater-text p,
+    #trophies {
+      animation: entry-animation linear both;
+      animation-timeline: view();
+    }
+    #theater {
+      animation-range: entry 10% cover 40%;
+    }
+    #theater-text h1 {
+      animation-range: entry 10% cover 30%;
+    }
+    #theater-text p {
+      animation-range: entry 10% cover 20%;
+    }
+    #trophies {
+      animation-range: entry 30% cover 50%;
+    }
+    #trophies-text h1 {
+      animation-range: entry 30% cover 40%;
+    }
+    #trophies-text p {
+      animation-range: entry 20% cover 30%;
+    }
+    @keyframes entry-animation {
+      0% {
+        opacity: 0;
+        translate: var(--entry-animation) 0;
+      }
+      100% {
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
+    @keyframes cover-animation {
+      0% {
+        opacity: 0;
+        translate: var(--cover-animation) 0;
+      }
+      100% {
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
+  </style>
 </Layout>
