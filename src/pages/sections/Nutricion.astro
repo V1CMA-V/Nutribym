@@ -3,18 +3,18 @@ import ButtonToServices from '@/components/ButtonToServices.astro'
 import ListaNutricional from '@/components/ListaNutricional.astro'
 ---
 
-<section class="text-white flex flex-col mx-auto p-6 md:p-12 lg:p-20 ">
+<section class="text-white flex flex-col mx-auto p-6 md:p-12 lg:p-20">
   <h3 class="text-4xl font-semibold mx-auto tracking-wide text-center mb-10">
-    Nutricion especializada 
+    Nutricion especializada
   </h3>
-  <section class="flex lg:flex-row  flex-col  items-center gap-3">
+  <section class="flex lg:flex-row flex-col items-center gap-3">
     <img
       src="/img/nutricion-especializada.webp"
       alt="Nutricionista en consulta"
       class="w-1/2 h-1/2 object-cover rounded-lg"
     />
     <div class="px-8 flex flex-col justify-center items-center">
-      <p class=" lg:text-lg text-balance">
+      <p class="lg:text-lg text-balance">
         Cualquier sea tu condición médica, en Nutribym encontrarás una solución
         nutricional adecuada para lograr los objetivos que buscas en tu salud y
         aspecto físico de forma efectiva. Contamos con modalidades de consulta
@@ -22,7 +22,7 @@ import ListaNutricional from '@/components/ListaNutricional.astro'
         supervisión en todo momento.
       </p>
       <ListaNutricional />
-      <ButtonToServices>Ver servicios</ButtonToServices>
+      <ButtonToServices href="/servicios">Ver servicios</ButtonToServices>
     </div>
   </section>
 </section>
