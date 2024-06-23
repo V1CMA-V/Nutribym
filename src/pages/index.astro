@@ -1,7 +1,29 @@
 ---
 import Layout from '@/layouts/Layout.astro'
+
+import Hero from '@/pages/sections/Hero.astro'
+import InfoMision from '@/pages/sections/InfoMision.astro'
+import Bento from '@/pages/sections/Bento.astro'
+import Nutricion from '@/pages/sections/Nutricion.astro'
+import Testimonios from '@/pages/sections/Testimonios.astro'
+
+import Contacto from '@/pages/sections/ContactoUbi.astro'
 ---
 
-<Layout title="Nutribym" description=''>
-  <h1 class="text-5xl font-bold text-pretty text-center">Nutribym</h1>
+<Layout
+  title="Nutribym"
+  description="Web Oficial de Nutribym, nutricionista en Puebla"
+  canonical="https://nutribym.com/"
+>
+  <Hero />
+
+  <main
+    class="mx-auto min-h-screen max-w-7xl selection:bg-primary selection:text-secondary md:pt-20 lg:px-10"
+  >
+    <InfoMision />
+    <Bento />
+    <Nutricion />
+    <Testimonios /> 
+    <Contacto />
+  </main>
 </Layout>

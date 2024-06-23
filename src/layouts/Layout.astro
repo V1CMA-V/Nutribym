@@ -1,15 +1,20 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
 
+// Supports weights 200-900
+import '@fontsource-variable/nunito'
+import '@fontsource/fugaz-one';
+
 import Header from '@/components/Header.astro'
 import LightsBackground from '@/components/LightsBackground.astro'
 import NoiseBackground from '@/components/NoiseBackground.astro'
 import ButtonUp from '@/components/ButtonUp.astro'
 
-import Footer from '@/section/Footer.astro'
+import Footer from '@/pages/sections/Footer.astro'
 
 import SEO from '@/components/SEO.astro'
 import type { Preload } from '@/types/Preload'
+import Hero from '@/pages/sections/Hero.astro'
 
 interface Props {
   title: string
@@ -46,10 +51,12 @@ const { title, description, preload, canonical, image } = Astro.props
     <NoiseBackground />
     <!-- <LightsBackground /> -->
     <Header />
-    <div
+
+    <!-- <div
       class="mx-auto min-h-screen max-w-6xl px-2 pt-16 selection:bg-primary selection:text-secondary md:pt-20 lg:px-10"
       id="main-content"
-    >
+    > -->
+    <div>
       <slot />
       <Footer />
     </div>
@@ -74,7 +81,8 @@ const { title, description, preload, canonical, image } = Astro.props
       } */
 
       html {
-        font-family: 'Jost Variable', system-ui, sans-serif;
+        font-family: 'Nunito Variable', sans-serif;
+        /* font-family: 'Fugaz One', system-ui; */
         background: var(--background-color);
         scrollbar-gutter: stable;
       }
