@@ -1,7 +1,6 @@
 ---
 import HeroContainer from '@/components/HeroContainer.astro'
 import Layout from '@/layouts/Layout.astro'
-import ButtonToServices from '@/components/ButtonToServices.astro'
 
 const logros = [
   'Premio a la Excelencia en Nutrición 2020, Certificación en Nutrición Deportiva Avanzada.',
@@ -140,15 +139,18 @@ const logros = [
 
   <div class="bg-no-repeat bg-cover relative h-[90vh] w-full max-w-[100vw]">
     <div
-      class="absolute inset-0 ml-14 md:ml-36 lg:ml-96 w-full flex justify-center flex-col items-center animate-blurred-fade-in "
+      class="absolute inset-0 ml-14 md:ml-36 lg:ml-96 w-full flex justify-center flex-col items-center animate-blurred-fade-in"
     >
-      <p class="text-black text-center  lg:text-2xl font-semibold w-1/2 text-pretty">
+      <p
+        class="text-black text-center lg:text-2xl font-semibold w-1/2 text-pretty"
+      >
         ¿Quieres saber más sobre nuestro equipo y cómo podemos ayudarte a
         alcanzar tus metas de salud?
       </p>
-      <ButtonToServices
+      <a
         href="https://wa.me/2216620552?text=Hola,%20estoy%20interesado(a)%20en%20los%20servicios%20de%20adiestramiento%20de%20perros%20y%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20proporcionarme%20detalles%20sobre%20los%20programas%20disponibles,%20precios%20y%20disponibilidad?%20Gracias"
-        >Contactanos</ButtonToServices
+        class="mt-5 py-2 px-3 bg-orange-300 rounded-lg hover:bg-orange-400 hover:scale-105 transition-all"
+        >Contactanos</a
       >
     </div>
     <img
