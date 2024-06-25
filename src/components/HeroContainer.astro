@@ -6,7 +6,9 @@ interface Props {
 const { img } = Astro.props
 ---
 
-<div class="bg-no-repeat bg-cover relative h-[90vh] w-full max-w-[100vw] mt-0.5">
+<div
+  class="bg-no-repeat bg-cover relative h-[90vh] w-full max-w-[100vw] mt-0.5 -z-10"
+>
   <div
     class="absolute inset-0 m-auto w-full h-full flex justify-center flex-col items-center animate-blurred-fade-in"
   >
@@ -15,11 +17,11 @@ const { img } = Astro.props
   <img
     class="absolute cp-v h-full w-full object-cover object-center animate-duration-1000 animate-fade-in -z-10"
     src=`/img/${img}`
-    alt="Minis FHA cover"
+    alt="Nutribym cover"
   />
   <img
     class="absolute h-dvh w-full object-cover object-center animate-duration-1000 animate-ease-in-out blur-3xl -z-40"
     src=`/img/${img}`
-    alt="Minis FHA cover"
+    alt="Nutribym cover"
   />
 </div>
