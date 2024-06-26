@@ -17,29 +17,28 @@ import HeroContainer from '@/components/HeroContainer.astro'
   canonical="https://nutribym.com/"
 >
   <!-- <Hero /> -->
-   
 
-  <HeroContainer img="nutriologo.webp">
+  <HeroContainer img="/img/nutriologo.webp">
     <h1
-        id="sobre-nosotros"
-        class="flex items-center gap-5 text-4xl md:text-6xl lg:gap-20 lg:text-8xl z-40 font-fugazOne"
-      >
-        <span>N</span>
-        <span>U</span>
-        <span>T</span>
-        <span>R</span>
-        <span>I</span>
-        <span>B</span>
-        <span>Y</span>
-        <span>M</span>
-      </h1>
+      id="sobre-nosotros"
+      class="flex items-center gap-5 text-4xl md:text-6xl lg:gap-20 lg:text-8xl z-40 font-fugazOne"
+    >
+      <span>N</span>
+      <span>U</span>
+      <span>T</span>
+      <span>R</span>
+      <span>I</span>
+      <span>B</span>
+      <span>Y</span>
+      <span>M</span>
+    </h1>
 
-      <p
-        class="subtitle text-xl lg:text-2xl text-center text-wrap font-jura px-4 text-white/80"
-      >
-        Tu Salud, Nuestra Misión. Nutrición Personalizada para Cada Etapa de Tu
-        Vida.
-      </p>
+    <p
+      class="subtitle text-xl lg:text-2xl text-center text-wrap font-jura px-4 text-white/80"
+    >
+      Tu Salud, Nuestra Misión. Nutrición Personalizada para Cada Etapa de Tu
+      Vida.
+    </p>
   </HeroContainer>
 
   <main
@@ -48,7 +47,8 @@ import HeroContainer from '@/components/HeroContainer.astro'
     <InfoMision />
     <Bento />
     <Nutricion />
-    <Testimonios />
-    <Contacto />
   </main>
+
+  <!-- <Testimonios /> -->
+  <Contacto />
 </Layout>
