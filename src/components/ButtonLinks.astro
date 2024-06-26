@@ -1,0 +1,20 @@
+---
+interface Props {
+  class?: string
+  link?: string
+  newPage?: boolean
+}
+
+const { link, newPage = false } = Astro.props
+const targetAttributes = newPage
+  ? { target: '_blank', rel: 'noopener noreferrer' }
+  : {}
+---
+
+<a
+  href={link}
+  {...targetAttributes}
+  class=`${Astro.props.class} mt-5 py-2 px-3 bg-orange-300 rounded-lg hover:bg-orange-400 hover:scale-105 transition-all`
+>
+  <slot />
+</a>

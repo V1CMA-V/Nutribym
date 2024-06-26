@@ -1,0 +1,48 @@
+---
+import type { string } from 'astro/zod'
+
+interface Props {
+  class?: string
+  title?: string
+  subtitle?: string
+  link?: string
+}
+
+const { title, subtitle, link } = Astro.props
+---
+
+<a
+  href={link}
+  class=` ${Astro.props.class} col-span-3  transition-all relative rounded-xl backdrop-blur-md border-black/10 shadow-inner shadow-white/10 overflow-hidden group`
+>
+  <div
+    class="absolute bottom-0 top-0 z-10 h-full w-full
+    bg-gradient-to-b from-transparent from-40% via-[#000000]/50 to-[#000000]/80"
+  >
+  </div>
+
+  <slot name="image" />
+
+  <div
+    class="card relative z-20 flex h-full select-none flex-col justify-start items-center gap-2 p-4 text-lg md:p-6"
+  >
+    <h3 class="text-center my-4 text-balance text-3xl font-semibold uppercase">
+      {title}
+    </h3>
+
+    <p
+      class="subtitle text-base xl:text-xl font-semibold text-orange-200 text-center text-balance xl:opacity-0"
+    >
+      {subtitle}
+    </p>
+  </div>
+</a>
+
+<style>
+  .subtitle {
+    transition: opacity 0.3s ease;
+  }
+  .card:hover .subtitle {
+    opacity: 1;
+  }
+</style>

@@ -1,9 +1,10 @@
 ---
 interface Props {
   img: string
+  transition?: string
 }
 
-const { img } = Astro.props
+const { img, transition } = Astro.props
 ---
 
 <div
@@ -15,13 +16,14 @@ const { img } = Astro.props
     <slot />
   </div>
   <img
+    transition:name={`title-image-${transition}`}
     class="absolute cp-v h-full w-full object-cover object-center animate-duration-1000 animate-fade-in -z-10"
-    src=`/img/${img}`
+    src={img}
     alt="Nutribym cover"
   />
   <img
     class="absolute h-dvh w-full object-cover object-center animate-duration-1000 animate-ease-in-out blur-3xl -z-40"
-    src=`/img/${img}`
+    src={img}
     alt="Nutribym cover"
   />
 </div>
