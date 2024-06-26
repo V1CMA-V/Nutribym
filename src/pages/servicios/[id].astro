@@ -1,0 +1,92 @@
+---
+import HeroContainer from '@/components/HeroContainer.astro'
+import { SERVICES } from '@/consts/services'
+import Layout from '@/layouts/Layout.astro'
+import ButtonLinks from '@/components/ButtonLinks.astro'
+
+const getServiceById = (id?: string) => {
+  return SERVICES.find((service) => service.id === id)
+}
+
+const { id } = Astro.params
+
+const serviceData = getServiceById(id)
+
+if (!serviceData) {
+  return {
+    status: 404,
+    error: new Error('Service not found'),
+  }
+}
+
+const servicesAdds = [
+  'Entrevista inicial',
+  'Valoración de datos de la composición corporal',
+  'Diagnóstico ',
+  'Recomendaciones personalizadas ',
+  'Plan mensual personalizado nutricional ',
+  'Programa digital de entrenamiento mensual ',
+  'Monitoreo constante',
+]
+---
+
+<Layout
+  title=`${serviceData?.title} - Nutribym`
+  description=`${serviceData?.subtitle}`
+>
+  <HeroContainer
+    img=`${serviceData?.img}`
+    transition={`title-image-${serviceData?.id}`}
+  >
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase tracking tracking-widest font-semibold font-fugazOne"
+    >
+      {serviceData?.title}
+    </h1>
+    <p
+      class="subtitle text-xl lg:text-2xl text-center text-wrap font-jura px-4"
+    >
+      {serviceData?.subtitle}
+    </p>
+  </HeroContainer>
+
+  <main
+    class="mx-auto max-w-7xl selection:bg-primary selection:text-secondary mt-24 lg:px-10 content-center text-center text-xl px-4"
+  >
+    <p class="text-pretty mb-10">
+      {serviceData?.description}
+    </p>
+
+    <p class="text-2xl font-bold uppercase">
+      Modalidades {serviceData?.mode.title}
+    </p>
+
+    <p class="text-balance">{serviceData?.mode.description}</p>
+
+    <p>Contratacion mensual de <strong>${serviceData?.cost}</strong> mx</p>
+
+    <div
+      class="m-auto flex flex-col items-center justify-center max-w-2xl pb-10"
+    >
+      <p>Consta de:</p>
+      <ul class="text-left">
+        {servicesAdds.map((service) => <li class="">✔ {service}</li>)}
+      </ul>
+    </div>
+
+    <div class="flex flex-row gap-20 items-center justify-center">
+      <ButtonLinks link="/servicios" class="text-sm">
+        Otros Servicios
+      </ButtonLinks>
+      <ButtonLinks
+        link="https://wa.me/2216620552?text=Hola,%20estoy%20interesado(a)%20en%20los%20servicios%20de%20adiestramiento%20de%20perros%20y%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n.%20%C2%BFPodr%C3%ADan%20proporcionarme%20detalles%20sobre%20los%20programas%20disponibles,%20precios%20y%20disponibilidad?%20Gracias."
+        newPage={true}
+        class="text-2xl"
+      >
+        Contactanos
+      </ButtonLinks>
+    </div>
+
+    <div></div>
+  </main>
+</Layout>

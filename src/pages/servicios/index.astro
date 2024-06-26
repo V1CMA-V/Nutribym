@@ -1,0 +1,88 @@
+---
+import ServicesItem from '@/components/ServicesItem.astro'
+import HeroContainer from '@/components/HeroContainer.astro'
+import Layout from '@/layouts/Layout.astro'
+
+import { SERVICES } from '@/consts/services'
+import Numeros from '@/components/Numeros.astro'
+
+const services = SERVICES
+
+const incluye = [
+  'Flexibilidad de horario',
+  'Atención y supervisión',
+  'Asesoría en compras',
+  'Asesoría alimenticia',
+  'Modalidad presencial',
+  'Modalidad en línea',
+]
+---
+
+<Layout
+  title="Servicios - Nutribym"
+  description="Todos los servicios que ofrece Nutribym"
+>
+  <HeroContainer img="/img/nutricion-especializada.webp">
+    <h1
+      class="lg:text-6xl text-5xl text-center uppercase tracking tracking-widest text-black font-semibold font-fugazOne"
+    >
+      Nuestros Servicios
+    </h1>
+    <p
+      class="subtitle text-xl lg:text-2xl text-center text-wrap font-jura px-4 text-black"
+    >
+      Descubre cómo podemos ayudarte a alcanzar tus metas de salud y bienestar.
+    </p>
+  </HeroContainer>
+
+  <main
+    class="mx-auto max-w-7xl selection:bg-primary selection:text-secondary mt-24 lg:px-10 content-center"
+  >
+    <section>
+      <h2 class="text-4xl font-semibold text-center mb-10">
+        Logra el cambio que te propones
+      </h2>
+
+      <div
+        class="m-auto flex flex-col lg:flex-row lg:justify-between items-center max-w-2xl"
+      >
+        <p>Para cada servicio, incluye los siguientes detalles:</p>
+        <ul>
+          {incluye.map((item, index) => <li>✔ {item}</li>)}
+        </ul>
+      </div>
+    </section>
+    <section class="mx-auto p-6 md:p-12 lg:p-20 text-white">
+      <ul
+        class={`
+          grid lg:grid-cols-9 auto-rows-[15rem] gap-5
+        `}
+      >
+        {
+          services.map((service, index) => {
+            return (
+              <ServicesItem
+                title={service.title}
+                subtitle={service.subtitle}
+                link={`/servicios/${service.id}`}
+              >
+                <div
+                  transition:name={`title-image-${service.id}`}
+                  slot="image"
+                  class="background transition-scale absolute bottom-0 left-0 top-0
+                  -z-10 h-full w-full
+                  bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+                  style={`background-image: url('${service.img}')`}
+                />
+              </ServicesItem>
+            )
+          })
+        }
+      </ul>
+    </section>
+
+    <section>
+      <Numeros />
+    </section>
+  </main>
+</Layout>
