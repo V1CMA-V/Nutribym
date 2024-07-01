@@ -12,6 +12,8 @@ export const SERVICES: Service[] = [
             title: "Presencial y virtual",
             description: "Consulta nutricional + Rutina de entrenamiento digital"
         },
+        
+        message: "text=%C2%A1Hola!%20Estoy%20interesado%20en%20el%20plan%20de%20Nutrici%C3%B3n%20Cl%C3%ADnica.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20funciona%20y%20c%C3%B3mo%20podr%C3%ADa%20empezar.%20Mi%20nombre%20es%20[Tu%20Nombre].",
 
         cost: 1200.00
     },
@@ -25,6 +27,7 @@ export const SERVICES: Service[] = [
             title: "Presencial y virtual",
             description: "Consulta nutricional + Rutina de entrenamiento digital"
         },
+        message: "text=%C2%A1Hola!%20Estoy%20interesado%20en%20el%20plan%20de%20Nutrici%C3%B3n%20Deportiva.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20funciona%20y%20c%C3%B3mo%20podr%C3%ADa%20empezar.%20Mi%20nombre%20es%20[Tu%20Nombre].",
         cost: 1500.00
     },
     {
@@ -37,6 +40,7 @@ export const SERVICES: Service[] = [
             title: "Presencial y virtual",
             description: "Consulta nutricional + Rutina de entrenamiento digital"
         },
+        message: "text=%C2%A1Hola!%20Estoy%20interesado%20en%20una%20Consulta%20Nutricional.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20funciona%20y%20c%C3%B3mo%20podr%C3%ADa%20empezar.%20Mi%20nombre%20es%20[Tu%20Nombre].",
         cost: 1000.00
     },
     {
@@ -49,6 +53,7 @@ export const SERVICES: Service[] = [
             title: "Presencial y virtual",
             description: "Consulta nutricional + Rutina de entrenamiento digital"
         },
+        message: "text=%C2%A1Hola!%20Estoy%20interesado%20en%20el%20plan%20de%20Nutrici%C3%B3n%20Vegetariana.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20funciona%20y%20c%C3%B3mo%20podr%C3%ADa%20empezar.%20Mi%20nombre%20es%20[Tu%20Nombre].",
         cost: 1100.00
     },
 
@@ -62,6 +67,7 @@ export const SERVICES: Service[] = [
             title: "Presencial y virtual",
             description: "Consulta nutricional + Rutina de entrenamiento digital"
         },
+        message: "text=%C2%A1Hola!%20Estoy%20interesado%20en%20el%20R%C3%A9gimen%20Keto.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20funciona%20y%20c%C3%B3mo%20podr%C3%ADa%20empezar.%20Mi%20nombre%20es%20[Tu%20Nombre].",
         cost: 1300.00
     },
     {
@@ -74,6 +80,7 @@ export const SERVICES: Service[] = [
             title: "Presencial y virtual",
             description: "Consulta nutricional + Rutina de entrenamiento digital"
         },
+        message: "text=%C2%A1Hola!%20Estoy%20interesado%20en%20el%20plan%20de%20Nutrici%C3%B3n%20Infantil.%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20funciona%20y%20c%C3%B3mo%20podr%C3%ADa%20empezar.%20Mi%20nombre%20es%20[Tu%20Nombre].",
         cost: 1000.00
     },
 
