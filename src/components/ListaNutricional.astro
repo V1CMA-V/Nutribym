@@ -3,18 +3,22 @@ const especialidad = [
   'Diabetes',
   'Hipertensión',
   'Obesidad',
-  'Ristencia a la insulina',
   'Lesiones Deportivas',
-  'Alergias Alimentarias',
   'Vegetarianos',
   'Veganos',
+
+  'Alergias Alimentarias',
+
+  'Ristencia a la insulina',
 ]
 ---
 
-<ul class="grid grid-cols-2 mt-5  px-3 w-full ">
+<ul
+  class="grid lg:grid-cols-2 gap-x-3 text-white text-lg text-left lg:text-xl mt-5 lg:mt-10 "
+>
   {
     especialidad.map((item) => (
-      <li class="text-lg text-pretty">
+      <li>
         <strong>✔</strong> {item}
       </li>
     ))
