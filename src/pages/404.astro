@@ -1,4 +1,5 @@
 ---
+import ButtonLinks from '@/components/ButtonLinks.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
@@ -6,9 +7,9 @@ import Layout from '@/layouts/Layout.astro'
   title="Página no encontrada"
   description="Web Oficial de Nutribym, nutricionista en Puebla"
 >
-  <div class="container text-center text-white">
+  <div class="text-center text-white content-center w-full h-screen -my-48">
     <h1 class="text-4xl font-bold text-center">Página no encontrada</h1>
     <p class="my-5">La página que buscas no existe o ha sido movida.</p>
-    <a href="/" class="border px-2 py-1 rounded-md hover:bg-slate-300 hover:text-black transition-colors">Ir a inicio</a>
+    <ButtonLinks link="/">Inicio</ButtonLinks>
   </div></Layout
 >
