@@ -1,0 +1,32 @@
+---
+interface Props {
+  img: string
+  text: string
+  name: string
+}
+
+const { img, text, name } = Astro.props
+---
+
+<div
+  class="relative rounded-xl
+              backdrop-blur-md
+              overflow-hidden
+              group h-80 w-[250px]"
+>
+  <div
+    class="transition-scale absolute bottom-0 left-0 top-0
+          -z-10 h-full w-full
+          bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-500 ease-in-out group-hover:blur-md"
+    style=`background-image: url('/img/clientes/${img}.webp')`
+  >
+  </div>
+  <div
+    class="relative z-20 flex h-full select-none flex-col justify-center gap-1 p-4 text-lg md:p-6 opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out"
+  >
+    <p class="max-w-xl text-base md:text-lg">
+      {text}
+    </p>
+    <p class="font-semibold">- {name}</p>
+  </div>
+</div>
